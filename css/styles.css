@@ -1,0 +1,142 @@
+* {
+  font-family: "Proza Libre", sans-serif;
+  font-weight: 600;
+}
+
+header {
+  background-color: #4c2373;
+}
+
+.row {
+  display: flex;
+}
+
+.header h2 {
+  font-weight: 600;
+  color: white;
+  font-size: 20px;
+}
+
+main {
+  background-color: #eceaec;
+}
+
+.main h1 {
+  font-size: 32px;
+}
+
+.image-content {
+  width: 100%;
+  margin: auto;
+}
+
+.image-blank {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.main {
+  width: 100%;
+  margin: auto;
+}
+
+.main h3 {
+  font-size: 14px;
+}
+
+.notes {
+  width: 100%;
+  margin: auto;
+}
+
+.notes h3 {
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  border-color: #cac9ca;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.input-notes {
+  width: 100%;
+  border-color: #cac9ca;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  display: inline-flex;
+  resize: none;
+}
+
+.footer {
+  width: 100%;
+  margin: auto;
+  text-align: end;
+}
+
+.button-save {
+  background-color: #4c2373;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  padding: 5px 12px;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.align-right {
+  text-align: right;
+}
+
+/* @media screen and (min-width: 750px) {
+  .column-full {
+    flex-basis: 50%;
+    flex-wrap: wrap;
+    width: fit-content;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .image-content {
+    flex-basis: 50%;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .footer {
+    flex-basis: 100%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .sample {
+    flex-basis: 100%;
+    margin: auto;
+  }
+} */
+
+/* .image-blank {
+    flex-basis: 50%;
+    flex-wrap: wrap;
+  }
+} */
+
+/* .footer {
+  flex-basis: 100%;
+}
+
+.notes {
+  width: 100%;
+  margin: auto;
+} */
+
+/* one row, two columns.
+image on left side and title and photo URL on the right side.
+notes to full width taking up all of row..... soooo how would i set that up. */
