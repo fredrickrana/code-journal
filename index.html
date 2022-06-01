@@ -28,109 +28,45 @@
       </div>
     </div>
   </header>
-
   <main>
     <div class="container">
-      <div class="row entry">
-        <div class="column-full">
-          <h1>New Entry</h1>
+      <form data-view="entry-form">
+        <div class="row entry">
+          <div class="column-full">
+            <h1>New Entry</h1>
+          </div>
         </div>
-      </div>
-
-
-      <div class="row image-content">
-        <div class="column-half">
-          <img src="images/placeholder-image-square.jpg" class="image-blank">
-        </div>
-
-        <div class="column-half" data-view="entry-form">
-          <form>
-
+        <div class="row image-content">
+          <div class="column-half">
+            <img src="images/placeholder-image-square.jpg" class="image-blank">
+          </div>
+          <div class="column-half">
             <label for="title">Title</label>
             <div>
               <input type="text" id="title" required class="input">
             </div>
-            <label for="photo-url">Photo URL</label>
+            <label for="photourl">Photo URL</label>
             <div>
-              <input type="text" id="photo-url" required class="input">
+              <input type="text" id="photourl" required class="input">
             </div>
-
-            <div class="column-full notes">
-              <label for="notes">Notes</label>
-              <div>
-                <textarea name="notes" id="notes" cols="40" rows="7" class="input-notes" required>
-                </textarea>
-              </div>
-            </div>
-
-            <!-- added a div to the notes section. trying to bring notes section on the bottom portion of page. -->
-
-            <div class="footer">
-              <button type="button" class="button-save">SAVE</button>
-            </div>
-          </form>
-
-
+          </div>
         </div>
-      </div>
-
-
+        <div class="row">
+          <div class="column-full">
+            <label for="notes">Notes</label>
+            <div>
+              <textarea name="notes" id="notes" cols="40" rows="7" class="input-notes" required>
+              </textarea>
+            </div>
+            <div class="footer">
+              <button type="submit" class="button-save">SAVE</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
-
-      <!-- <div class="row image-content">
-        <div class="column-full">
-          <img src="images/placeholder-image-square.jpg" class="image-blank">
-        </div>
-      </div>
-      <div class="row main">
-        <div class="column-full">
-          <h3>Title</h3>
-          <input type="text" id="title" required="required" class="input">
-        </div>
-      </div>
-      <div class="row main">
-        <div class="column-full">
-          <h3>Photo URL</h3>
-          <input type="text" id="photo-url" required="required" class="input">
-        </div>
-      </div>
-      <div class="row notes">
-        <div class="column-full">
-          <h3>Notes</h3>
-          <textarea name="notes" cols="40" rows="7" class="input-notes"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column-full">
-          <div class="footer">
-            <button type="button" class="button-save">SAVE</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html> -->
-
-<!--
-  <div class = row>
-    <div class = column - half
-    <img>
-    <div class = column - half
-    <h3 title
-    <input type
-  </div
-
-
-
- -->
