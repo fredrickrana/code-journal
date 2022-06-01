@@ -22,7 +22,7 @@ function getDataEntry(event) {
     notes: $notes,
     entryId: data.nextEntryId++
   };
-  data.entries.push(objectData);
+  data.entries.unshift(objectData);
   image.setAttribute('src', 'images/placeholder-image-square.jpg');
   form.reset();
 }

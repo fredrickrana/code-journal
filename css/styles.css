@@ -7,10 +7,6 @@ header {
   background-color: #4c2373;
 }
 
-.row {
-  display: flex;
-}
-
 .header h2 {
   font-weight: 600;
   color: white;
