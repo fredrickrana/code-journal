@@ -7,15 +7,34 @@ header {
   background-color: #4c2373;
 }
 
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .header h2 {
-  font-weight: 600;
+  font-weight: 500;
   color: white;
   font-size: 20px;
 }
 
+.header a {
+  color: white;
+  font-weight: 200;
+  margin-left: 25px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.column-auto {
+  width: auto;
+}
+
 main {
   background-color: #eceaec;
-  height: 1000px;
+  height: auto;
+  padding-bottom: 100px;
 }
 
 .entry h1 {
@@ -71,4 +90,32 @@ label {
   padding: 5px 12px;
   margin-top: 25px;
   font-size: 14px;
+}
+
+.button-new {
+  background-color: #4c2373;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  padding: 5px 12px;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.recorded-entries {
+  text-align: center;
+}
+
+.recorded-entries p {
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.entries-title {
+  width: 50%;
+}
+
+.entries-button {
+  width: 50%;
+  text-align: end;
 }
