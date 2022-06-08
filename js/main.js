@@ -27,23 +27,9 @@ function getDataEntry(event) {
   form.reset();
 }
 
-// OKAY OKAY... GAME PLAN
-// sooooo... feature two's goal is to allow users to view entries
-// according to the example, after typing in information to the title, photoURL, and notes section, and clicking the save button, the data entered will be generated in another tab or page within the app.
-// NOW ACTUAL GAME PLAN
+// ^ END OF FEATURE #1
 
-// Finish structuring the html and css of the entries section/tab
-// view swapping to switch between the [data-view="entry-form"] and [data-view="entries"].
-// Probably would have to you and if statement, an addEventListener, and finish brushing up on view-swapping.
-
-// ignore the rest until you finish the first part... but thats what you have to do right now... LETS GO!!!!
-
-// our focus is to generate the li element found in the html file
-// the li element contains the list of items that consists of the new entries
-// the objective is to use an addEventListener to call the function once the submit button is clicked
-// query the DOM to return the entries id
-
-// if entries is clicked, then gets transported to other tab (aka the [view data-view="entries"]) so then addeventlistener
+// ____________________________________________________________________________
 
 // var entriesLink = document.querySelector('[href="#entries"]');
 // var newButton = document.querySelector('.button-new');
