@@ -29,7 +29,7 @@ function getDataEntry(event) {
 
 // ^ END OF FEATURE #1
 
-// ____________________________________________________________________________
+// _____________________________________________________________________
 
 // var entriesLink = document.querySelector('[href="#entries"]');
 // var newButton = document.querySelector('.button-new');
