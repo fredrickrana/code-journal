@@ -33,6 +33,8 @@
   </header>
   <main>
     <div class="container">
+
+      <!-- ENTRY FORM -->
       <form class="hidden" data-view="entry-form">
         <div class="row entry">
           <div class="column-full">
@@ -48,7 +50,7 @@
             <div>
               <input type="text" id="title" required class="input">
             </div>
-            <label for="photourl">Photo URL</label>
+            <label for="photo-url">Photo URL</label>
             <div>
               <input type="text" id="photourl" required class="input">
             </div>
@@ -68,9 +70,8 @@
         </div>
       </form>
 
-
-
-      <div data-view="entries">
+      <!-- CURRENT ENTRIES -->
+      <div data-view="entries" class="current-entries">
         <div class="row">
           <div class="column-half entries-title">
             <h1>Entries</h1>
@@ -79,19 +80,16 @@
             <button type="submit" class="button-new">NEW</button>
           </div>
         </div>
-        <div class="row recorded-entries">
-          <div class="no-entries view column-full">
+        <div class="row text-center">
+          <div class="no-entries column-full">
             <p>No entries have been recorded.</p>
           </div>
         </div>
       </div>
 
-      <ul>
-        <li>
-
-        </li>
-
-        <li class="row">
+      <!-- UNORDERED LIST FOR ENTRIES / DUMMY JOURNAL -->
+      <ul class="new-entries">
+        <!-- <li class="row">
           <div class="column-half">
             <img src="images/placeholder-image-square.jpg" class="image-blank">
           </div>
@@ -101,19 +99,7 @@
               <p>Sample journal</p>
             </div>
           </div>
-        </li>
-        <li class="row">
-          <div class="column-half">
-            <img src="images/placeholder-image-square.jpg" class="image-blank">
-          </div>
-          <div class="column-half">
-            <h3>Sample #2</h3>
-            <div>
-              <p>Sample Journal #2</p>
-            </div>
-          </div>
-        </li>
-        <li></li>
+        </li> -->
       </ul>
     </div>
   </main>
