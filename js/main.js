@@ -85,7 +85,7 @@ $entriesButton.addEventListener('click', goToEntries);
 // function DOMContentLoaded(event) {
 //   for (var i = 0; i < data.entries.length; i++) {
 //     var $dataEntries = (data.entries[i]);
-//     $ul.prepend($dataEntries);
+//     $ul.append($dataEntries);
 //   }
 // }
 // $ul.addEventListener('change', DOMContentLoaded);
