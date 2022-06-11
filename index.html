@@ -33,8 +33,6 @@
   </header>
   <main>
     <div class="container">
-
-      <!-- ENTRY FORM -->
       <form class="hidden" data-view="entry-form">
         <div class="row entry">
           <div class="column-full">
@@ -70,8 +68,7 @@
         </div>
       </form>
 
-      <!-- CURRENT ENTRIES -->
-      <div data-view="entries" class="current-entries">
+      <div data-view="entries">
         <div class="row">
           <div class="column-half entries-title">
             <h1>Entries</h1>
@@ -82,14 +79,20 @@
         </div>
         <div class="row text-center">
           <div class="no-entries column-full">
-            <p>No entries have been recorded.</p>
+            <p class="empty-entries">No entries have been recorded.</p>
           </div>
         </div>
+        <ul>
+        </ul>
       </div>
+    </div>
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
 
-      <!-- UNORDERED LIST FOR ENTRIES / DUMMY JOURNAL -->
-      <ul class="new-entries">
-        <!-- <li class="row">
+<!-- <li class="row">
           <div class="column-half">
             <img src="images/placeholder-image-square.jpg" class="image-blank">
           </div>
@@ -99,11 +102,5 @@
               <p>Sample journal</p>
             </div>
           </div>
-        </li> -->
-      </ul>
-    </div>
-  </main>
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+        </li>
+-->
