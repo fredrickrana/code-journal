@@ -1,8 +1,8 @@
 /* global data */
 
 var $url = document.getElementById('photourl');
-var image = document.querySelector('.image-blank');
-var form = document.querySelector('form');
+var $image = document.querySelector('.image-blank');
+var $form = document.querySelector('form');
 var $titleInfo = document.querySelector('input');
 var $photoURL = document.querySelector('input[id="photourl"]');
 var $notes = document.querySelector('textarea');
@@ -13,7 +13,7 @@ var $entriesButton = document.querySelector('a[href="#entries"]');
 var $empty = document.querySelector('.empty-entries');
 
 function photoURL(event) {
-  image.setAttribute('src', $url.value);
+  $image.setAttribute('src', $url.value);
 }
 $url.addEventListener('input', photoURL);
 
@@ -26,13 +26,13 @@ function getDataEntry(event) {
     entryId: data.nextEntryId++
   };
   data.entries.unshift(objectData);
-  image.setAttribute('src', 'images/placeholder-image-square.jpg');
-  form.reset();
+  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $form.reset();
   $ul.prepend(newDataEntry(data.entries[0]));
   data.view = 'entries';
   viewSwap();
 }
-form.addEventListener('submit', getDataEntry);
+$form.addEventListener('submit', getDataEntry);
 
 function newDataEntry(entry) {
   var newLi = document.createElement('li');
@@ -90,10 +90,10 @@ function emptyEntries() {
 
 function viewSwap() {
   if (data.view === 'entry-form') {
-    form.className = 'view';
+    $form.className = 'view';
     $entriesPage.className = 'view hidden';
   } else if (data.view === 'entries') {
-    form.className = 'view hidden';
+    $form.className = 'view hidden';
     $entriesPage.className = 'view';
   }
 }
