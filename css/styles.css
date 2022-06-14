@@ -127,3 +127,26 @@ label {
 .view {
   display: block;
 }
+
+.fa-pencil {
+  font-size: 25px;
+  padding-top: 18px;
+  color: #73558d;
+}
+
+.column-one-fifth {
+  width: 20%;
+}
+
+.column-four-fifth {
+  width: 80%;
+}
+
+.right-text-align {
+  text-align: right;
+}
+
+.entry-notes {
+  font-weight: 200;
+  padding-bottom: 30px;
+}
