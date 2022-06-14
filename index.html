@@ -22,15 +22,18 @@
   <header>
     <div class="container">
       <div class="row header">
-        <div class="column-full">
+        <div class="column-auto">
           <h2>Code Journal</h2>
+        </div>
+        <div>
+          <a href="#entries">Entries</a>
         </div>
       </div>
     </div>
   </header>
   <main>
     <div class="container">
-      <form data-view="entry-form">
+      <form class="hidden" data-view="entry-form">
         <div class="row entry">
           <div class="column-full">
             <h1>New Entry</h1>
@@ -45,7 +48,7 @@
             <div>
               <input type="text" id="title" required class="input">
             </div>
-            <label for="photourl">Photo URL</label>
+            <label for="photo-url">Photo URL</label>
             <div>
               <input type="text" id="photourl" required class="input">
             </div>
@@ -64,9 +67,40 @@
           </div>
         </div>
       </form>
+
+      <div data-view="entries">
+        <div class="row">
+          <div class="column-half entries-title">
+            <h1>Entries</h1>
+          </div>
+          <div class="column-half entries-button">
+            <button type="submit" class="button-new">NEW</button>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="no-entries column-full">
+            <p class="empty-entries">No entries have been recorded.</p>
+          </div>
+        </div>
+        <ul>
+        </ul>
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
+
+<!-- <li class="row">
+          <div class="column-half">
+            <img src="images/placeholder-image-square.jpg" class="image-blank">
+          </div>
+          <div class="column-half">
+            <h3>Sample</h3>
+            <div>
+              <p>Sample journal</p>
+            </div>
+          </div>
+        </li>
+-->
