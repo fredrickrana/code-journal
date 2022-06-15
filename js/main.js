@@ -11,6 +11,7 @@ var $newButton = document.querySelector('.button-new');
 var $entriesPage = document.querySelector('div[data-view="entries"]');
 var $entriesButton = document.querySelector('a[href="#entries"]');
 var $empty = document.querySelector('.empty-entries');
+// var $pencil = document.querySelector('.fa-pencil');
 
 function photoURL(event) {
   $image.setAttribute('src', $url.value);
@@ -110,3 +111,29 @@ function viewSwap() {
     $entriesPage.className = 'view';
   }
 }
+
+// function editEntry(event) {
+//   for (var i = 0; i < $pencil.length; i++) {
+//     if (event.target === $pencil[i]) {
+//       console.log(event.target);
+//       $form.className = 'view';
+//       $entriesPage.className = 'view hidden';
+//     }
+//   }
+// }
+
+// $form.className = 'view';
+// $entriesPage.className = 'view hidden';
+
+// for (var i = 0; i < data.entries.length; i++) {
+//   if (event.target === $pencil[i]) {
+//     $form.className = 'view';
+//     $entriesPage.className = 'view hidden';
+//   }
+// }
+// $pencil.addEventListener('click', editEntry);
+
+// use event.target of the clicked pencil
+// create a loop that cycles through each entry until it is the correct event.target
+// go to the form with the values of the object
+// use replaceWith() to replace text when editing an entry

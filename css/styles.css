@@ -134,6 +134,10 @@ label {
   color: #73558d;
 }
 
+.fa-pencil:hover {
+  color: #4c2373;
+}
+
 .column-one-fifth {
   width: 20%;
 }
