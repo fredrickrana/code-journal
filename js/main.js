@@ -11,7 +11,6 @@ var $newButton = document.querySelector('.button-new');
 var $entriesPage = document.querySelector('div[data-view="entries"]');
 var $entriesButton = document.querySelector('a[href="#entries"]');
 var $empty = document.querySelector('.empty-entries');
-// var $pencil = document.querySelector('.fa-pencil');
 
 function photoURL(event) {
   $image.setAttribute('src', $url.value);
@@ -112,6 +111,11 @@ function viewSwap() {
   }
 }
 
+// var $pencil = document.querySelector('i');
+// $pencil.addEventListener('click', showEntryForm);
+// showEntryForm();
+// console.log($pencil);
+
 // function editEntry(event) {
 //   for (var i = 0; i < $pencil.length; i++) {
 //     if (event.target === $pencil[i]) {
@@ -133,7 +137,33 @@ function viewSwap() {
 // }
 // $pencil.addEventListener('click', editEntry);
 
+// function showEntryForm(event) {
+//   data.view = 'entry-form';
+//   viewSwap();
+// }
+
 // use event.target of the clicked pencil
 // create a loop that cycles through each entry until it is the correct event.target
 // go to the form with the values of the object
 // use replaceWith() to replace text when editing an entry
+
+// ______________________________________________
+
+// Listen for clicks on the parent element of all rendered entries.
+// Show the entry form if an edit icon was clicked.
+// var $pencil = document.querySelector('.fa-pencil');
+// var $li = document.querySelector('li');
+// function showEntryForm(event) {
+//   data.view = 'entry-form';
+//   viewSwap();
+// }
+// $pencil.addEventListener('click', showEntryForm);
+// $li.addEventListener('click', showEntryForm);
+
+// Find the matching entry object in the data model and assign it to the data model's editing property if an edit icon was clicked.
+// function editEntryForm (event) {
+//   for (var i = 0; i < data.entries; i++) {
+//     data.editing = data.entries[i];
+//     if
+//   }
+// }
