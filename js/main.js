@@ -11,11 +11,43 @@ var $newButton = document.querySelector('.button-new');
 var $entriesPage = document.querySelector('div[data-view="entries"]');
 var $entriesButton = document.querySelector('a[href="#entries"]');
 var $empty = document.querySelector('.empty-entries');
+var $newPage = document.querySelector('h1[id="new-entry-title"]');
+var $editPage = document.querySelector('h1[id="edit-entry-title"]');
 
 function photoURL(event) {
   $image.setAttribute('src', $url.value);
 }
 $url.addEventListener('input', photoURL);
+
+// function getDataEntry(event) {
+//   event.preventDefault();
+//   if (data.editing !== null) {
+//     var objectData = {
+//       title: $titleInfo.value,
+//       photourl: $photoURL.value,
+//       notes: $notes.value,
+//       entryId: data.nextEntryId++
+//     };
+//     data.entries.unshift(objectData);
+//     $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+//     $form.reset();
+//     $ul.prepend(newDataEntry(data.entries[0]));
+//     data.view = 'entries';
+//     viewSwap();
+//   } else {
+//     var $liElement = document.querySelectorAll('li');
+//     for (var x = 0; x < $liElement.length; x++) {
+//       if ($li.Element[i] === )
+//     }
+
+//     renderEditingEntries();
+//     for (var x = 0; x < data.entries.length; x++) {
+//       if (data.editing === data.entries[x]) {
+//       data.entries[x].replaceWith(data.editing);
+//     }
+//   }
+// }
+// $form.addEventListener('submit', getDataEntry);
 
 function getDataEntry(event) {
   event.preventDefault();
@@ -70,12 +102,54 @@ function newDataEntry(entry) {
   newDc.textContent = entry.notes;
   newDf.appendChild(newDc);
   emptyEntries();
+  newI.addEventListener('click', editIcon);
   return newLi;
 }
+
+function editIcon(event) {
+  data.view = 'entry-form';
+  viewSwap();
+  $newPage.className = 'hidden';
+  $editPage.className = 'view';
+  addPreviousEnties();
+  renderEditingEntries();
+  photoURL();
+}
+
+function addPreviousEnties() {
+  if (event.target.matches('i')) {
+    var $li = event.target.closest('li');
+    var $liEntry = parseInt($li.getAttribute('data-entry-id'));
+    for (var i = 0; i < data.entries.length; i++) {
+      if ($liEntry === data.entries[i].entryId) {
+        data.editing = data.entries[i];
+      }
+    }
+  }
+}
+
+function renderEditingEntries() {
+  $titleInfo.value = data.editing.title;
+  $photoURL.value = data.editing.photourl;
+  $notes.value = data.editing.notes;
+}
+
+// function replaceEntries() {
+//   for (var x = 0; x < data.entries.length; x++) {
+//     if (data.editing === data.entries[x]) {
+//       data.entries[x].replaceWith(data.editing);
+//     }
+//   }
+// }
+// $form.addEventListener('submit', replaceEntries);
+
+// ..............................................................
 
 function newEntry(event) {
   data.view = 'entry-form';
   viewSwap();
+  $newPage.className = 'view';
+  $editPage.className = 'hidden';
 }
 $newButton.addEventListener('click', newEntry);
 
@@ -110,60 +184,3 @@ function viewSwap() {
     $entriesPage.className = 'view';
   }
 }
-
-// var $pencil = document.querySelector('i');
-// $pencil.addEventListener('click', showEntryForm);
-// showEntryForm();
-// console.log($pencil);
-
-// function editEntry(event) {
-//   for (var i = 0; i < $pencil.length; i++) {
-//     if (event.target === $pencil[i]) {
-//       console.log(event.target);
-//       $form.className = 'view';
-//       $entriesPage.className = 'view hidden';
-//     }
-//   }
-// }
-
-// $form.className = 'view';
-// $entriesPage.className = 'view hidden';
-
-// for (var i = 0; i < data.entries.length; i++) {
-//   if (event.target === $pencil[i]) {
-//     $form.className = 'view';
-//     $entriesPage.className = 'view hidden';
-//   }
-// }
-// $pencil.addEventListener('click', editEntry);
-
-// function showEntryForm(event) {
-//   data.view = 'entry-form';
-//   viewSwap();
-// }
-
-// use event.target of the clicked pencil
-// create a loop that cycles through each entry until it is the correct event.target
-// go to the form with the values of the object
-// use replaceWith() to replace text when editing an entry
-
-// ______________________________________________
-
-// Listen for clicks on the parent element of all rendered entries.
-// Show the entry form if an edit icon was clicked.
-// var $pencil = document.querySelector('.fa-pencil');
-// var $li = document.querySelector('li');
-// function showEntryForm(event) {
-//   data.view = 'entry-form';
-//   viewSwap();
-// }
-// $pencil.addEventListener('click', showEntryForm);
-// $li.addEventListener('click', showEntryForm);
-
-// Find the matching entry object in the data model and assign it to the data model's editing property if an edit icon was clicked.
-// function editEntryForm (event) {
-//   for (var i = 0; i < data.entries; i++) {
-//     data.editing = data.entries[i];
-//     if
-//   }
-// }

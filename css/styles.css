@@ -34,7 +34,15 @@ header {
 main {
   background-color: #eceaec;
   height: auto;
-  padding-bottom: 1000px;
+  padding-bottom: 25vh;
+}
+
+.empty-entries {
+  padding-bottom: 55vh;
+}
+
+ul {
+  padding: 0;
 }
 
 .entry h1 {
