@@ -34,7 +34,15 @@ header {
 main {
   background-color: #eceaec;
   height: auto;
-  padding-bottom: 1000px;
+  padding-bottom: 25vh;
+}
+
+.empty-entries {
+  padding-bottom: 55vh;
+}
+
+ul {
+  padding: 0;
 }
 
 .entry h1 {
@@ -126,4 +134,31 @@ label {
 
 .view {
   display: block;
+}
+
+.fa-pencil {
+  font-size: 25px;
+  padding-top: 18px;
+  color: #73558d;
+}
+
+.fa-pencil:hover {
+  color: #4c2373;
+}
+
+.column-one-fifth {
+  width: 20%;
+}
+
+.column-four-fifth {
+  width: 80%;
+}
+
+.right-text-align {
+  text-align: right;
+}
+
+.entry-notes {
+  font-weight: 200;
+  padding-bottom: 30px;
 }

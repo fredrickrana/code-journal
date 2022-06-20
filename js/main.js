@@ -11,6 +11,8 @@ var $newButton = document.querySelector('.button-new');
 var $entriesPage = document.querySelector('div[data-view="entries"]');
 var $entriesButton = document.querySelector('a[href="#entries"]');
 var $empty = document.querySelector('.empty-entries');
+var $newPage = document.querySelector('h1[id="new-entry-title"]');
+var $editPage = document.querySelector('h1[id="edit-entry-title"]');
 
 function photoURL(event) {
   $image.setAttribute('src', $url.value);
@@ -19,25 +21,38 @@ $url.addEventListener('input', photoURL);
 
 function getDataEntry(event) {
   event.preventDefault();
-  var objectData = {
-    title: $titleInfo.value,
-    photourl: $photoURL.value,
-    notes: $notes.value,
-    entryId: data.nextEntryId++
-  };
-  data.entries.unshift(objectData);
-  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  if (data.editing === null) {
+    var objectData = {
+      title: $titleInfo.value,
+      photourl: $photoURL.value,
+      notes: $notes.value,
+      entryId: data.nextEntryId++
+    };
+    data.entries.unshift(objectData);
+    $ul.prepend(newDataEntry(data.entries[0]));
+  } else {
+    data.editing.title = $titleInfo.value;
+    data.editing.photourl = $photoURL.value;
+    data.editing.notes = $notes.value;
+    var $liElements = document.querySelectorAll('li');
+    for (var i = 0; i < $liElements.length; i++) {
+      if (data.editing.entryId === parseInt($liElements[i].getAttribute('data-entry-id'))) {
+        $liElements[i].replaceWith(newDataEntry(data.editing));
+      }
+    }
+  }
   $form.reset();
-  $ul.prepend(newDataEntry(data.entries[0]));
   data.view = 'entries';
   viewSwap();
+  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  data.editing = null;
 }
 $form.addEventListener('submit', getDataEntry);
 
 function newDataEntry(entry) {
   var newLi = document.createElement('li');
   newLi.className = 'row';
-  newLi.setAttribute('entry-id', entry.entryId);
+  newLi.setAttribute('data-entry-id', entry.entryId);
   var newDi = document.createElement('div');
   newDi.className = 'column-half';
   newLi.appendChild(newDi);
@@ -46,23 +61,67 @@ function newDataEntry(entry) {
   newImg.setAttribute('src', entry.photourl);
   newDi.appendChild(newImg);
   var newDa = document.createElement('div');
-  newDa.setAttribute('class', 'column-half');
+  newDa.className = 'column-half';
   newLi.appendChild(newDa);
-  var newHe = document.createElement('h3');
+  var newDd = document.createElement('div');
+  newDd.className = 'row';
+  newDa.appendChild(newDd);
+  var newDe = document.createElement('div');
+  newDe.className = 'column-one-fifth';
+  newDd.appendChild(newDe);
+  var newHe = document.createElement('h2');
   newHe.textContent = entry.title;
-  newDa.appendChild(newHe);
+  newDe.appendChild(newHe);
   var newDb = document.createElement('div');
-  newDa.appendChild(newDb);
+  newDb.className = 'column-four-fifth right-text-align';
+  newDd.appendChild(newDb);
+  var newI = document.createElement('i');
+  newI.className = 'fas fa-pencil';
+  newDb.appendChild(newI);
+  var newDf = document.createElement('div');
+  newDa.appendChild(newDf);
   var newDc = document.createElement('p');
+  newDc.className = 'entry-notes';
   newDc.textContent = entry.notes;
-  newDb.appendChild(newDc);
+  newDf.appendChild(newDc);
   emptyEntries();
+  newI.addEventListener('click', editIcon);
   return newLi;
+}
+
+function editIcon(event) {
+  data.view = 'entry-form';
+  viewSwap();
+  $newPage.className = 'hidden';
+  $editPage.className = 'view';
+  addPreviousEnties();
+  renderEditingEntries();
+  photoURL();
+}
+
+function addPreviousEnties() {
+  if (event.target.matches('i')) {
+    var $li = event.target.closest('li');
+    var $liEntry = parseInt($li.getAttribute('data-entry-id'));
+    for (var i = 0; i < data.entries.length; i++) {
+      if ($liEntry === data.entries[i].entryId) {
+        data.editing = data.entries[i];
+      }
+    }
+  }
+}
+
+function renderEditingEntries() {
+  $titleInfo.value = data.editing.title;
+  $photoURL.value = data.editing.photourl;
+  $notes.value = data.editing.notes;
 }
 
 function newEntry(event) {
   data.view = 'entry-form';
   viewSwap();
+  $newPage.className = 'view';
+  $editPage.className = 'hidden';
 }
 $newButton.addEventListener('click', newEntry);
 
